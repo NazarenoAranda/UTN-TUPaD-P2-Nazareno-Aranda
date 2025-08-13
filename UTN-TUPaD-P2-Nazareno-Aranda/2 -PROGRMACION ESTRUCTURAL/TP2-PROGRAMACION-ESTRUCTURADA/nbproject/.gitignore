@@ -1,0 +1,13 @@
+# Ignorar carpetas de compilación y distribución
+/build/
+/dist/
+
+# Ignorar archivos compilados de Java
+*.class
+
+# Ignorar archivos temporales de NetBeans
+/nbproject/private/
+
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
