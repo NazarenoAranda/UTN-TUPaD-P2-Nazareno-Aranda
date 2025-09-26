@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5.ejercicio7">
+  <ClassDiagramComponents>
+    <Class name="Conductor" package="tp5.ejercicio7" visibility="public" xPosition="73.0" yPosition="657.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="licencia" type="String" visibility="private"/>
+        <Field name="vehiculo" type="Vehiculo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="licencia"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getLicencia" returnType="String" visibility="public"/>
+        <Method name="getVehiculo" returnType="Vehiculo" visibility="public"/>
+        <Method name="setVehiculo" returnType="void" visibility="public">
+          <Argument type="Vehiculo" name="vehiculo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="tp5.ejercicio7" visibility="public" xPosition="94.0" yPosition="105.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Motor" package="tp5.ejercicio7" visibility="public" xPosition="60.0" yPosition="349.0">
+      <Fields>
+        <Field name="tipo" type="String" visibility="private"/>
+        <Field name="numeroSerie" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="tipo"/>
+          <Argument type="String" name="numeroSerie"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTipo" returnType="String" visibility="public"/>
+        <Method name="getNumeroSerie" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="tp5.ejercicio7" visibility="public" xPosition="505.0" yPosition="415.0">
+      <Fields>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="motor" type="Motor" visibility="private"/>
+        <Field name="conductor" type="Conductor" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="patente"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="Motor" name="motor"/>
+          <Argument type="Conductor" name="conductor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPatente" returnType="String" visibility="public"/>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="getMotor" returnType="Motor" visibility="public"/>
+        <Method name="getConductor" returnType="Conductor" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="conductor" source="tp5.ejercicio7.Vehiculo" target="tp5.ejercicio7.Conductor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="motor" source="tp5.ejercicio7.Vehiculo" target="tp5.ejercicio7.Motor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vehiculo" source="tp5.ejercicio7.Conductor" target="tp5.ejercicio7.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5.ejercicio7.Vehiculo" target="tp5.ejercicio7.Motor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5.ejercicio7.Conductor" target="tp5.ejercicio7.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5.ejercicio7.Vehiculo" target="tp5.ejercicio7.Conductor" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

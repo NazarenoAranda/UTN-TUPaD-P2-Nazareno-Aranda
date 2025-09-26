@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5.ejercicio9">
+  <ClassDiagramComponents>
+    <Class name="CitaMedica" package="tp5.ejercicio9" visibility="public" xPosition="120.0" yPosition="555.0">
+      <Fields>
+        <Field name="fecha" type="LocalDate" visibility="private"/>
+        <Field name="hora" type="LocalTime" visibility="private"/>
+        <Field name="paciente" type="Paciente" visibility="private"/>
+        <Field name="profesional" type="Profesional" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="LocalDate" name="fecha"/>
+          <Argument type="LocalTime" name="hora"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="Profesional" name="profesional"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="tp5.ejercicio9" visibility="public" xPosition="84.0" yPosition="30.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Paciente" package="tp5.ejercicio9" visibility="public" xPosition="106.0" yPosition="217.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="obraSocial" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="obraSocial"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getObraSocial" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Profesional" package="tp5.ejercicio9" visibility="public" xPosition="471.0" yPosition="217.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="especialidad" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="especialidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getEspecialidad" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="profesional" source="tp5.ejercicio9.CitaMedica" target="tp5.ejercicio9.Profesional" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paciente" source="tp5.ejercicio9.CitaMedica" target="tp5.ejercicio9.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

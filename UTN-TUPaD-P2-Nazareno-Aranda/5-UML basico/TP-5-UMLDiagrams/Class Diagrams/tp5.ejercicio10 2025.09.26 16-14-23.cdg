@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5.ejercicio10">
+  <ClassDiagramComponents>
+    <Class name="ClaveSeguridad" package="tp5.ejercicio10" visibility="public" xPosition="116.0" yPosition="588.0">
+      <Fields>
+        <Field name="codigo" type="String" visibility="private"/>
+        <Field name="ultimaModificacion" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="codigo"/>
+          <Argument type="LocalDate" name="ultimaModificacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigo" returnType="String" visibility="public"/>
+        <Method name="getUltimaModificacion" returnType="LocalDate" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CuentaBancaria" package="tp5.ejercicio10" visibility="public" xPosition="79.0" yPosition="251.0">
+      <Fields>
+        <Field name="cbu" type="String" visibility="private"/>
+        <Field name="saldo" type="double" visibility="private"/>
+        <Field name="clave" type="ClaveSeguridad" visibility="private"/>
+        <Field name="titular" type="Titular" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="cbu"/>
+          <Argument type="double" name="saldo"/>
+          <Argument type="ClaveSeguridad" name="clave"/>
+          <Argument type="Titular" name="titular"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="tp5.ejercicio10" visibility="public" xPosition="166.0" yPosition="49.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Titular" package="tp5.ejercicio10" visibility="public" xPosition="783.0" yPosition="222.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="cuenta" type="CuentaBancaria" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getDni" returnType="String" visibility="public"/>
+        <Method name="setCuenta" returnType="void" visibility="public">
+          <Argument type="CuentaBancaria" name="cuenta"/>
+        </Method>
+        <Method name="getCuenta" returnType="CuentaBancaria" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="titular" source="tp5.ejercicio10.CuentaBancaria" target="tp5.ejercicio10.Titular" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cuenta" source="tp5.ejercicio10.Titular" target="tp5.ejercicio10.CuentaBancaria" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5.ejercicio10.Titular" target="tp5.ejercicio10.CuentaBancaria" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="clave" source="tp5.ejercicio10.CuentaBancaria" target="tp5.ejercicio10.ClaveSeguridad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

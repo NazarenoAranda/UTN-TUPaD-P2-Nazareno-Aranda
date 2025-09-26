@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp5.ejercicio12">
+  <ClassDiagramComponents>
+    <Class name="Calculadora" package="tp5.ejercicio12" visibility="public" xPosition="253.0" yPosition="608.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcular" returnType="void" visibility="public">
+          <Argument type="Impuesto" name="impuesto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Contribuyente" package="tp5.ejercicio12" visibility="public" xPosition="28.0" yPosition="258.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="cuil" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="cuil"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getCuil" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Impuesto" package="tp5.ejercicio12" visibility="public" xPosition="435.0" yPosition="258.0">
+      <Fields>
+        <Field name="monto" type="double" visibility="private"/>
+        <Field name="contribuyente" type="Contribuyente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="monto"/>
+          <Argument type="Contribuyente" name="contribuyente"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMonto" returnType="double" visibility="public"/>
+        <Method name="getContribuyente" returnType="Contribuyente" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="tp5.ejercicio12" visibility="public" xPosition="253.0" yPosition="56.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="tp5.ejercicio12.Calculadora" target="tp5.ejercicio12.Impuesto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contribuyente" source="tp5.ejercicio12.Impuesto" target="tp5.ejercicio12.Contribuyente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp5.ejercicio12.Impuesto" target="tp5.ejercicio12.Contribuyente" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
